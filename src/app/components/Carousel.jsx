@@ -20,19 +20,22 @@ const Carousel = () => {
           <img src="/images/about/img1.JPEG" alt="Image 1" width={500} height={500} />
         </div> */}
         <div className="carousel-item">
-          <img src="/images/about/img2.jpeg" alt="Image 2"  />
+          <img src="/images/about/SChoumiloffEVE.jpeg" alt="Everest (Nepal)"  />
         </div>
         <div className="carousel-item">
-          <img src="/images/about/img3.jpeg" alt="Image 3"  />
+          <img src="/images/about/SChoumiloffLC.jpeg" alt="Saint véran (Queyras)"  />
         </div>
         <div className="carousel-item">
-          <img src="/images/about/img4.jpeg" alt="Image 4"  />
+          <img src="/images/about/SChoumiloffLC2.jpeg" alt="Saint véran 2(Queyras)"  />
         </div>
         <div className="carousel-item">
-          <img src="/images/about/img5.jpeg" alt="Image 5" />
+          <img src="/images/about/SChoumiloffMB.JPEG" alt="Mont blanc (Tournette)" />
         </div>
         <div className="carousel-item">
-          <img src="/images/about/img6.jpeg" alt="Image 6" />
+          <img src="/images/about/SChoumiloffNEP.jpeg" alt="(Nepal)" />
+        </div>
+        <div className="carousel-item">
+          <img src="/images/about/SChoumiloffTAIL.jpeg" alt="Taillante (Queyras)" />
         </div>
       </Slider>
     </div>
