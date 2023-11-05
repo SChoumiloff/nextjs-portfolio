@@ -1,40 +1,44 @@
 "use client";
 import React, { useTransition, useState } from "react";
-import Image from "next/image";
-import TabButton from "./TabButton";
+import TabButton from "./TabButton";  
+import Carousel from "./Carousel";
+
 
 const TAB_DATA = [
   {
-    title: "Skills",
+    title: "Skills ⚒️",
     id: "skills",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Node.js</li>
-        <li>Express</li>
-        <li>PostgreSQL</li>
-        <li>Sequelize</li>
-        <li>JavaScript</li>
-        <li>React</li>
+      <ul className="list-none">
+        <li>~ Python</li>
+        <li>~ Postgres</li>
+        <li>~ NestJs</li>
+        <li>~ Algorithms</li>
+        <li>~ Big data structures</li>
+        <li>~ Prompt engineering</li>
+        <li>~ LLMs ops</li>
       </ul>
     ),
   },
   {
-    title: "Education",
+    title: "Education 🏫",
     id: "education",
     content: (
-      <ul className="list-disc pl-2">
-        <li>Fullstack Academy of Code</li>
-        <li>University of California, Santa Cruz</li>
+      <ul className="list-none">
+        <li>~ AI & databases master, university of burgundy, Dijon</li>
+        <li>~ Mathematics degree, university via domitia, Perpignan</li>
       </ul>
     ),
   },
   {
-    title: "Certifications",
-    id: "certifications",
+    title: "Hobbies 🏫",
+    id: "hobbies",
     content: (
-      <ul className="list-disc pl-2">
-        <li>AWS Cloud Practitioner</li>
-        <li>Google Professional Cloud Developer</li>
+      <ul className="list-none">
+        <li>~ Ski touring</li>
+        <li>~ Hiking / mountaineering / climbing</li>
+        <li>~ Guitar</li>
+        <li>~ Discover the world</li>
       </ul>
     ),
   },
@@ -53,16 +57,19 @@ const AboutSection = () => {
   return (
     <section className="text-white" id="about">
       <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
-        <Image src="/images/about-image.png" width={500} height={500} />
+      {/* <iframe src='https://my.spline.design/miniroommusiccopy-ced00a59196bfe3deee13b62ec775545/' frameborder='0' width='100%' height='100%'></iframe> */}
+        {/* <Image src="/images/about-image.png" alt="about" width={500} height={500} /> */}
+        <div>
+          <Carousel />
+        </div>
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a full stack web developer with a passion for creating
-            interactive and responsive web applications. I have experience
-            working with JavaScript, React, Redux, Node.js, Express, PostgreSQL,
-            Sequelize, HTML, CSS, and Git. I am a quick learner and I am always
-            looking to expand my knowledge and skill set. I am a team player and
-            I am excited to work with others to create amazing applications.
+            I am a data/AI backend developper with a passion for creating products 
+            on specified business expertise. I use AI to industrialize expertises 
+            and increase the impacts. I have experience working with python, and 
+            typescript for building backend microservices platforms. I am a quick
+            learner and I love learning and developing my skills on new technologies.  
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
@@ -80,11 +87,11 @@ const AboutSection = () => {
               Education{" "}
             </TabButton>
             <TabButton
-              selectTab={() => handleTabChange("certifications")}
-              active={tab === "certifications"}
+              selectTab={() => handleTabChange("hobbies")}
+              active={tab === "hobbies"}
             >
               {" "}
-              Certifications{" "}
+              Hobbies{" "}
             </TabButton>
           </div>
           <div className="mt-8">

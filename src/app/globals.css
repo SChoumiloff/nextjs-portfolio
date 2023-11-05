@@ -16,6 +16,10 @@
   }
 }
 
+html {
+  background-color: #121212;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,4 +28,24 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+
+.carousel-container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.carousel-item img {
+  width: 500px; /* Set the initial preferred width */
+  height: 500px; /* Set the initial preferred height */
+  object-fit: cover; /* Preserve the aspect ratio and crop as needed */
+}
+
+/* Reduce the image size for smaller screens */
+@media (max-width: 768px) {
+  .carousel-item img {
+    width: 300px; /* Adjust the width for smaller screens */
+    height: 300px; /* Adjust the height for smaller screens */
+  }
 }
