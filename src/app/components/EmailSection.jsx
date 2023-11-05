@@ -77,7 +77,7 @@ const EmailSection = () => {
       message: message,
     };
     const JSONdata = JSON.stringify(data);
-    const endpoint = "http://localhost:3001/api/mail";
+    const endpoint = "https://api.dataelevation.dev/api/mail";
 
 
     const options = {
