@@ -6,13 +6,13 @@ import Link from "next/link";
 
 const HeroSection = () => {
   return (
-    <section className="lg:py-16 pl-12">
-      <div className="grid grid-cols-2 sm:grid-cols-12 pl-3">
+    <section className="">
+      <div className="">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
-          className="col-span-8 place-self-center text-center sm:text-left justify-self-start"
+          className=""
         >
           <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
@@ -37,8 +37,7 @@ const HeroSection = () => {
 
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
           
-            I&apos;m Sacha, a dedicated data engineer on a mission to scale new heights, 
-            both in the datas and heights peaks. By day, I&apos;m helping Laforge navigate the data currents. 
+            I&apos;m Sacha, a dedicated data engineer on a mission to scale new heights, both in the datas and heights peaks. By day, I&apos;m helping Laforge navigate the data currents. 
             By weekends, you&apos;ll find me conquering mountain peaks and exploring the world from a different perspective.
           </p>
           <div>
