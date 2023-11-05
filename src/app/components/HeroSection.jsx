@@ -57,7 +57,7 @@ const HeroSection = () => {
 
           <p className="text-[#ADB7BE] text-base sm:text-lg mb-6 lg:text-xl">
           
-            I&apos;m Sacha, a dedicated data engineer on a mission to scale new heights, both in the datas and heights peaks. By day, I&apos;m helping Laforge navigate the data currents. 
+            I&apos;m Sacha, a dedicated data engineer on a mission to scale new heights, both in the datas and heights peaks. By day, I&apos;m helping <a href="https://www.la-forge.ai/" className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">La Forge</a> navigate the data currents. 
             By weekends, you&apos;ll find me conquering mountain peaks and exploring the world from a different perspective.
           </p>
           <div>
