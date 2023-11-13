@@ -19,16 +19,6 @@ export default function RootLayout({ children }) {
         <meta property="og:title" content={metadata.title} />
         <meta property="og:description" content={metadata.description} />
         <meta http-equiv="content-language" content="en" />
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-34PTC9DSKE"></script>
-        <script>
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-34PTC9DSKE');
-        `}
-        </script>
       </head>
       
       <body className={inter.className}>{children}</body>

@@ -42,6 +42,29 @@ const TAB_DATA = [
       </ul>
     ),
   },
+  {
+    title: "Athletic career",
+    id: "athletic",
+    content: (
+    <div id="athletic-career">
+      <p className="py-3">As a former high-performance swimmer, I dedicated three remarkable years to the high level sporting center of <a href="https://cnea-fontromeu.fr/en/" className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600" target="_blank">Font Romeu</a>, proudly representing the colors of Club <a target="_blank" href="https://www.canet66natation.com/" className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">Canet 66 Natation</a>. My sporting highlights include:</p>
+      <ul>
+        <li className="py-1">
+            <p>~ Young French Champion in the 400m Individual Medley - Short course (2018)</p>
+        </li>
+
+        <li className="py-1">
+            <p>~ Young vice-Champion of France in the 200m Butterfly - Short course (2018)</p>
+        </li>
+
+        <li className="py-1">
+            <p>~ Young vice-Champion of France int the 200m Butterfly - Long Course (2017)</p>
+        </li>
+      </ul>
+    </div>
+
+    ),
+  }
 ];
 
 const AboutSection = () => {
@@ -90,6 +113,13 @@ const AboutSection = () => {
             >
               {" "}
               Hobbies{" "}
+            </TabButton>
+            <TabButton
+              selectTab={() => handleTabChange("athletic")}
+              active={tab === "athletic"}
+            >
+              {" "}
+              Athletic career{" "}
             </TabButton>
           </div>
           <div className="mt-8">
