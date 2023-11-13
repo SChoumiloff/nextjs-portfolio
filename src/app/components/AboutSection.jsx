@@ -10,13 +10,13 @@ const TAB_DATA = [
     id: "skills",
     content: (
       <ul className="list-none">
-        <li>~ Python</li>
-        <li>~ Postgres</li>
-        <li>~ NestJs</li>
-        <li>~ Algorithms</li>
-        <li>~ Big data structures</li>
-        <li>~ Prompt engineering</li>
-        <li>~ LLMs ops</li>
+        <li>- Python</li>
+        <li>- Postgres</li>
+        <li>- NestJs</li>
+        <li>- Algorithms</li>
+        <li>- Big data structures</li>
+        <li>- Prompt engineering</li>
+        <li>- LLMs ops</li>
       </ul>
     ),
   },
@@ -25,8 +25,8 @@ const TAB_DATA = [
     id: "education",
     content: (
       <ul className="list-none">
-        <li>~ AI & databases master, university of burgundy, Dijon</li>
-        <li>~ Mathematics degree, university via domitia, Perpignan</li>
+        <li>- AI & databases master, university of burgundy, Dijon</li>
+        <li>- Mathematics degree, university via domitia, Perpignan</li>
       </ul>
     ),
   },
@@ -35,10 +35,10 @@ const TAB_DATA = [
     id: "hobbies",
     content: (
       <ul className="list-none">
-        <li>~ Ski touring</li>
-        <li>~ Hiking / mountaineering / climbing</li>
-        <li>~ Guitar</li>
-        <li>~ Discover the world</li>
+        <li>- Ski touring</li>
+        <li>- Hiking / mountaineering / climbing</li>
+        <li>- Guitar</li>
+        <li>- Discover the world</li>
       </ul>
     ),
   },
@@ -50,15 +50,15 @@ const TAB_DATA = [
       <p className="py-3">As a former high-performance swimmer, I dedicated three remarkable years to the high level sporting center of <a href="https://cnea-fontromeu.fr/en/" className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600" target="_blank">Font Romeu</a>, proudly representing the colors of Club <a target="_blank" href="https://www.canet66natation.com/" className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">Canet 66 Natation</a>. My sporting highlights include:</p>
       <ul>
         <li className="py-1">
-            <p>~ Young French Champion in the 400m Individual Medley - Short course (2018)</p>
+            <p>- Young French Champion of the 400m Individual Medley - Short course (2018)</p>
         </li>
 
         <li className="py-1">
-            <p>~ Young vice-Champion of France in the 200m Butterfly - Short course (2018)</p>
+            <p>- Young vice-Champion of France of the 200m Butterfly - Short course (2018)</p>
         </li>
 
         <li className="py-1">
-            <p>~ Young vice-Champion of France int the 200m Butterfly - Long Course (2017)</p>
+            <p>- Young vice-Champion of France of the 200m Butterfly - Long Course (2017)</p>
         </li>
       </ul>
     </div>
