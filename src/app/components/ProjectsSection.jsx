@@ -17,7 +17,7 @@ const projectsData = [
   {
     id: 2,
     title: "Vertigo lab",
-    description: "Development of a datas aggregation platform for measuring the socio-economic and environmental impacts of companies.",
+    description: "Development of a data aggregation platform for measuring the socio-economic and environmental impacts of companies.",
     image: "/images/projects/vertigolab.jpg",
     tag: ["All", "Data"],
     gitUrl: "https://vertigolab.eu/",
@@ -35,7 +35,7 @@ const projectsData = [
   {
     id: 4,
     title: "Trading assistant",
-    description: "Assistant who help for detects trading patterns and backtest trading strategies (based on more than 100 technicals indicators) on crypto currencies",
+    description: "Assistant who helps to detect trading patterns and backtests trading strategies (based on more than 100 technical indicators) on crypto currencies",
     image: "/images/projects/trading.png",
     tag: ["All", "AI"],
     gitUrl: "/",

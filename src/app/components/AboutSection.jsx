@@ -86,11 +86,11 @@ const AboutSection = () => {
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
-            I am a data/AI backend developper with a passion for creating products 
+            I am a data/AI backend developer with a passion for creating products 
             on specified business expertise. I use AI to industrialize expertises 
             and increase the impacts. I have experience working with python, and 
-            typescript for building backend microservices platforms. I am a quick
-            learner and I love learning and developing my skills on new technologies.  
+            typescript to build backend microservices platforms. I am a quick
+            learner and I love learning and developing my skills in new technologies.  
           </p>
           <div className="flex flex-row justify-start mt-8">
             <TabButton
