@@ -35,6 +35,7 @@ jobs:
   update-containers:
     name: Update containers
     runs-on: ubuntu-latest
+    needs: push_to_registry
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
