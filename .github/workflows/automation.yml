@@ -32,13 +32,21 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Fetch Latest Code
+  update-containers:
+    name: Update containers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install sshpass
-        run: sudo apt-get update && sudo apt-get install -y sshpass
-
-      - name: Restart Containers
-        run: |
-          sshpass -p ${{ secrets.SSH_PASSWORD }} ssh root@62.72.19.46 
-          'cd /home/portfolio-docker && docker compose down && docker compose pull && docker-compose up -d --build'
+      - name: SSH into VM and update containers
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /home/portfolio-docker
+              docker compose down
+              docker compose pull
+              docker compose up -d --build
