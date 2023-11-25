@@ -36,8 +36,8 @@ const Carousel = () => {
         <div className="carousel-item" onClick={() => enlargeImage("/images/about/SChoumiloffLC2.jpeg")}>
           <img src="/images/about/SChoumiloffLC2.jpeg" alt="Saint véran 2(Queyras)"  />
         </div>
-        <div className="carousel-item" onClick={() => enlargeImage("/images/about/SChoumiloffMB.jpeg")}>
-          <img src="/images/about/SChoumiloffMB.jpeg" alt="Mont blanc (Tournette)" />
+        <div className="carousel-item" onClick={() => enlargeImage("/images/about/SChoumiloffMB.JPEG")}>
+          <img src="/images/about/SChoumiloffMB.JPEG" alt="Mont blanc (Tournette)" />
         </div>
         <div className="carousel-item" onClick={() => enlargeImage("/images/about/SChoumiloffNEP.jpeg")}>
           <img src="/images/about/SChoumiloffNEP.jpeg" alt="(Nepal)" />
