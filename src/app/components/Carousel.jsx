@@ -27,6 +27,9 @@ const Carousel = () => {
   return (
       <div className="carousel-container">
       <Slider {...settings}>
+        <div className="carousel-item" onClick={() => enlargeImage("/images/about/toiliesSachaChoumiloff.jpg")}>
+          <img src="/images/about/toiliesSachaChoumiloff.jpg" alt="Tête des toillies (Queyras)"  />
+        </div>
         <div className="carousel-item" onClick={() => enlargeImage("/images/about/SChoumiloffEVE.jpeg")}>
           <img src="/images/about/SChoumiloffEVE.jpeg" alt="Everest (Nepal)"  />
         </div>
