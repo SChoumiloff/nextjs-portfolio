@@ -4,21 +4,23 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Sacha Choumiloff',
-  description: "Sacha Chomiloff's data engineering portfolio with a passion for mountains.",
+  title: 'Sacha Choumiloff - Data Engineering Portfolio',
+  description: "Explore Sacha Choumiloff's portfolio showcasing expertise in data engineering, analytics, and a passion for mountain exploration.",
 }
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="/images/logo.png" />
-        <title>{metadata.title}</title>
-        <meta name='description' content={metadata.description}/>
-        <meta name="keywords" content="data engineering, data elevation, portfolio, mountains, Sacha Choumiloff" />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:title" content={metadata.title} />
-        <meta property="og:description" content={metadata.description} />
-        <meta http-equiv="content-language" content="en" />
+      <link rel="icon" href="/images/logo.png" />
+      <title>{metadata.title}</title>
+      <meta name='description' content={metadata.description}/>
+      <meta name="keywords" content="Sacha Choumiloff, Data Engineering, Data Analytics, Portfolio, Mountain Exploration, Big Data, Data Visualization" />
+      <meta name="robots" content="index,follow" />
+      <meta property="og:title" content={metadata.title} />
+      <meta property="og:description" content={metadata.description} />
+      <meta property="og:type" content="website" />
+      <meta http-equiv="content-language" content="en" />
         {/* Hotjar Tracking Code avec vérification côté client */}
         <script dangerouslySetInnerHTML={{
           __html: `
