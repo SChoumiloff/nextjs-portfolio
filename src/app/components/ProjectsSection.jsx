@@ -3,12 +3,16 @@ import React, { useState, useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import ProjectTag from "./ProjectTag";
 import { motion, useInView } from "framer-motion";
+import { useLanguage } from "./LanguageContext";
 
 const projectsData = [
   {
     id: 1,
     title: "RTI-Exploration",
-    description: "AI solution for detecting deep aquifers from NASA satellite Images",
+    description: {
+      EN: "AI solution for detecting deep aquifers from NASA satellite images",
+      FR: "Solution d'IA permettant à partir des images satellite de détecter des aquifères profond."
+    },
     image: "/images/projects/RTI-Exploration.jpg",
     tag: ["All", "AI", "Data"],
     gitUrl: "https://www.rtiexploration.com/",
@@ -17,7 +21,10 @@ const projectsData = [
   {
     id: 2,
     title: "Vertigo lab",
-    description: "Development of a data aggregation platform for measuring the socio-economic and environmental impacts of companies.",
+    description: {
+      EN: "Development of a data aggregation platform for measuring the socio-economic and environmental impacts of companies.",
+      FR: "Développement d'une solution d'aggregation de données pour mesurer les impacts socio-économique en environnemental d'un société"
+    },
     image: "/images/projects/vertigolab.jpg",
     tag: ["All", "Data"],
     gitUrl: "https://vertigolab.eu/",
@@ -26,7 +33,10 @@ const projectsData = [
   {
     id: 3,
     title: "Mieux",
-    description: "Development of a health platform using AI to monitor the health of beneficiaries in a personalized way.",
+    description: {
+      EN: "Development of a health platform using AI to monitor the health of beneficiaries in a personalized way.",
+      FR: "Développement d'une plateforme de santé utilisant l'IA pour suivre et mésurer l'état de santé d'une personne de manière personnalisé."
+    },
     image: "/images/projects/logo.svg",
     tag: ["All", "Data", "AI"],
     gitUrl: "https://mieux.health/",
@@ -35,7 +45,10 @@ const projectsData = [
   {
     id: 4,
     title: "Trading assistant",
-    description: "Assistant who helps to detect trading patterns and backtests trading strategies (based on more than 100 technical indicators) on crypto currencies",
+    description: {
+      EN: "Assistant who helps to detect trading patterns and backtests trading strategies (based on more than 100 technical indicators) on crypto currencies",
+      FR: "Agent permettant la détection de patternes et de backtester des stratégies de trading (basé sur plus de 100 indicateurs techniques). "
+    },
     image: "/images/projects/trading.png",
     tag: ["All", "AI"],
     gitUrl: "/",
@@ -60,6 +73,8 @@ const ProjectsSection = () => {
     initial: { y: 50, opacity: 0 },
     animate: { y: 0, opacity: 1 },
   };
+
+  const {language} = useLanguage()
 
   return (
     <section id="projects">
@@ -95,7 +110,7 @@ const ProjectsSection = () => {
             <ProjectCard
               key={project.id}
               title={project.title}
-              description={project.description}
+              description={project.description[language]}
               imgUrl={project.image}
               gitUrl={project.gitUrl}
               previewUrl={project.previewUrl}

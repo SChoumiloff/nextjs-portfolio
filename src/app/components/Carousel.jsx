@@ -12,7 +12,7 @@ const Carousel = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1, // You can adjust the number of visible slides
+    slidesToShow: 1, 
     slidesToScroll: 1,
   };
 

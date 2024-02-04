@@ -4,23 +4,28 @@ import React, { useState } from "react";
 import NavLink from "./NavLink";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverlay from "./MenuOverlay";
+import LanguageToggle from "./LanguageToogle";
+import { useLanguage } from "./LanguageContext";
 
 const navLinks = [
   {
-    title: "About",
+    EN: "About",
+    FR: "A propos",
     path: "#about",
   },
   {
-    title: "Projects",
+    EN: "Projects",
+    FR: "Projets",
     path: "#projects",
   },
   {
-    title: "Contact",
+    FR: "Me contacter",
+    EN: "Contact me",
     path: "#contact",
   },
 ];
-
 const Navbar = () => {
+  const {language} = useLanguage()
   const [navbarOpen, setNavbarOpen] = useState(false);
 
   return (
@@ -53,9 +58,12 @@ const Navbar = () => {
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
             {navLinks.map((link, index) => (
               <li key={index}>
-                <NavLink href={link.path} title={link.title} />
+                <NavLink href={link.path} title={link[language]} />
               </li>
             ))}
+              <li key={'language'}>
+                <LanguageToggle />
+              </li>
           </ul>
         </div>
       </div>

@@ -8,12 +8,42 @@ import Link from "next/link";
 import { ToastContainer, toast } from 'react-toastify';
 import Image from "next/image";
 import 'react-toastify/dist/ReactToastify.css';
+import { useLanguage } from "./LanguageContext";
 
+
+const errors = {
+  emptyFields: {
+    EN: "This field cannot be empty !",
+    FR: "Ce champ ne peut pas être vide !"
+  }, 
+  invalidEmail: {
+    EN: "Invalid email format !",
+    FR: "Email non valide !"
+  },
+  subjectToLong: {
+    EN: "Subject is too long (max 100 characters) !",
+    FR: "L'objet du message est trop long (max 100 caractères) !"
+  },
+  messageToLong: {
+    EN: "Message is too long (max 400 characters) !",
+    FR: "Le message est trop long (max 400 caractères) !"
+  },
+  successSending: {
+    EN: "Message has been sent with success 😄 !",
+    FR: "Message envoyé avec succès 😄 !"
+  },
+  errorSending: {
+    EN: "The message could not be delivered  😞...",
+    FR: "Le message n'a pas pu être délivré  😞 ..."
+  }
+}
 
 var validator = require('validator');
 
+
 const EmailSection = () => {
   
+  const {language} = useLanguage()
   const [emailSubmitted, setEmailSubmitted] = useState(false);
   const [emailError, setEmailError] = useState("");
   const [messageError, setMessageError] = useState("");
@@ -29,35 +59,35 @@ const EmailSection = () => {
     const message = e.target.message.value
 
     if (!email.trim()) {
-      setEmailError("Email cannot be empty !")
+      setEmailError(errors.emptyFields[language])
       return;
     } else {
       setEmailError("")
     }
 
     if (!validator.isEmail(email)) {
-      setEmailError("Invalid email format !")
+      setEmailError(errors.invalidEmail[language])
       return;
     } else {
       setEmailError("")
     }
 
     if (!subject.trim()) {
-      setSubjectError("Subject cannot be empty !")
+      setSubjectError(errors.emptyFields[language])
       return;
     } else {
       setSubjectError("")
     }
 
     if (subject.length > 100) {
-      setSubjectError("Subject is too long (max 100 characters) !");
+      setSubjectError(errors.subjectToLong[language]);
       return;
     } else {
       setSubjectError("")
     }
 
     if (!message.trim()) {
-      setMessageError("Message cannot be empty !")
+      setMessageError(errors.emptyFields[language])
       return;
     } else {
       setMessageError("")
@@ -65,7 +95,7 @@ const EmailSection = () => {
 
 
     if (message.length > 400) {
-      setMessageError("Message is too long (max 400 characters) !");
+      setMessageError(errors.messageToLong[language]);
       return;
     } else {
       setMessageError(""); 
@@ -94,18 +124,17 @@ const EmailSection = () => {
       e.target.email.value = ""
       e.target.subject.value = ""
       e.target.message.value = ""
-      toast.success('Message has been sent with success 😄 !', {
+      toast.success(errors.successSending[language], {
         autoClose: 5000,
       });
     }
 
     if (response.status === 500) {
-      toast.error('Internal server error 😞 ...', {
+      toast.error(errors.errorSending[language], {
         autoClose: 5000,
       });
     }
   };
-
 
 
   return (
@@ -117,13 +146,16 @@ const EmailSection = () => {
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
       <div className="z-10">
         <h5 className="text-xl font-bold text-white my-2">
-          Let&apos;s Connect
+          {language === "EN" ? "Let's Connect" : "Echangeons"}
+          
         </h5>
         <p className="text-[#ADB7BE] mb-4 max-w-md">
           {" "}
-          I&apos;m constantly looking for opportunities, my inbox is always
-          open. Whether you have a question or just want to say hi, I&apos;ll
-          try my best to get back to you!
+          {
+            language === "EN" ? "I'm constantly looking for opportunities, my inbox is always open. Whether you have a question or just want to say hi, I'll try my best to get back to you!" : 
+            "Je suis toujours à la recherche de nouvelles opportunités. Si vous avez des questions et/ou des idées, je ferai mon maximum pour revenir rapidement vers vous !"
+          }
+          
         </p>
         <div className="socials flex flex-row gap-2">
           <Link target="_blank" href="https://github.com/SChoumiloff">
@@ -149,7 +181,7 @@ const EmailSection = () => {
           <form className="flex flex-col" onSubmit={handleSubmit}>
                         <div className="mb-6">
               <label htmlFor="email" className="text-white block mb-2 text-sm font-medium">
-                Your email
+              {language === "EN" ? "Your email" : "Votre adresse email"}
               </label>
               <input
                 name="email"
@@ -164,14 +196,14 @@ const EmailSection = () => {
                 htmlFor="subject"
                 className="text-white block text-sm mb-2 font-medium"
               >
-                Subject
+                {language === "EN" ? "Subject" : "Objet"}
               </label>
               <input
                 name="subject"
                 type="text"
                 id="subject"
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Just saying hi"
+                placeholder={language === "EN" ? "Just saying hi" : "Coucou"}
               />
               <p className="text-red-500 text-sm">{subjectError}</p>
             </div>
@@ -186,7 +218,7 @@ const EmailSection = () => {
                 name="message"
                 id="message"
                 className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Let's talk about..."
+                placeholder={language === "EN" ? "Let's talk about..." : "Parlons de..."}
               />
               <p className="text-red-500 text-sm">{messageError}</p>
             </div>
@@ -194,7 +226,7 @@ const EmailSection = () => {
               type="submit"
               className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
             >
-              Send Message
+              {language === "EN" ? "Send message" : "Envoyer"}
             </button>
           </form>
         )}
