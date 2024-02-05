@@ -58,42 +58,44 @@ const EmailSection = () => {
     const subject = e.target.subject.value
     const message = e.target.message.value
 
+    const button = document.querySelector("#submit")
+    
     if (!email.trim()) {
       setEmailError(errors.emptyFields[language])
       return;
     } else {
       setEmailError("")
     }
-
+    
     if (!validator.isEmail(email)) {
       setEmailError(errors.invalidEmail[language])
       return;
     } else {
       setEmailError("")
     }
-
+    
     if (!subject.trim()) {
       setSubjectError(errors.emptyFields[language])
       return;
     } else {
       setSubjectError("")
     }
-
+    
     if (subject.length > 100) {
       setSubjectError(errors.subjectToLong[language]);
       return;
     } else {
       setSubjectError("")
     }
-
+    
     if (!message.trim()) {
       setMessageError(errors.emptyFields[language])
       return;
     } else {
       setMessageError("")
     }
-
-
+    
+    
     if (message.length > 400) {
       setMessageError(errors.messageToLong[language]);
       return;
@@ -101,6 +103,8 @@ const EmailSection = () => {
       setMessageError(""); 
     }
 
+    button.disabled = true
+    
     const data = {
       email: email,
       subject: subject,
@@ -134,12 +138,13 @@ const EmailSection = () => {
         autoClose: 5000,
       });
     }
+
+    button.disabled = false
   };
 
 
   return (
     <section
-    
       id="contact"
       className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
     >
@@ -224,7 +229,9 @@ const EmailSection = () => {
             </div>
             <button
               type="submit"
-              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
+              id="submit"
+              name="submit"
+              className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full disabled:bg-primary-400 disabled:cursor-not-allowed disabled:opacity-75"
             >
               {language === "EN" ? "Send message" : "Envoyer"}
             </button>
