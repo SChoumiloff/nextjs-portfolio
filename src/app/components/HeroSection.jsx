@@ -55,7 +55,7 @@ const HeroSection = () => {
   const {language} = useLanguage()
   const dlFile = async () => {
     try {
-      const response = await fetch('http://localhost:3001/api/dl/resume/'+language);
+      const response = await fetch('https://api.dataelevation.dev/api/dl/resume/'+language);
       if (response.ok) {
         const blob = await response.blob();
         const url = window.URL.createObjectURL(blob);
