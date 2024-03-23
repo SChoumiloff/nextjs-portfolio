@@ -44,6 +44,42 @@ const projectsData = [
   },
   {
     id: 4,
+    title: "Tracer",
+    description: {
+      EN: "Project with the purpose of detect, classify and identify burried works, we have developed an reality augmented app using AI to help enedis agents in there daily tasks. I was tasked with leading the R&D efforts, annotating, training, and deploying the deep learning mode.",     
+      FR: "Avec pour objectif de détecter, classer et identifier les ouvrages enterrés, nous avons développé une application de réalité augmentée utilisant l'IA pour aider les agents d'Enedis dans leurs tâches quotidiennes. J'ai été chargé de diriger les efforts de R&D, d'annoter, d'entraîner et de déployer le modèle d'apprentissage profond"
+    },
+    image: "",
+    tag: ["All", "AI"],
+    gitUrl: "/",
+    previewUrl: "/",
+  },
+  {
+    id: 22,
+    title: "Jvpdt",
+    description: {
+      EN: "A platform that allows for the sharing and writing of historical articles.",     
+      FR: "Plateforme permettant de partager et rédiger des articles historiques."
+    },
+    image: "/images/projects/pochette.jpg",
+    tag: ["All", "Development"],
+    gitUrl: "/",
+    previewUrl: "/",
+  },
+  {
+    id: 21,
+    title: "My portfolio",
+    description: {
+      EN: "Building my online porfolio using nextjs and nestjs frameworks.",
+      FR: "Création de mon CV digital en utilisant les frameworks nextjs et nestjs. ",
+    },
+    image: "/images/projects/next-js.svg",
+    tag: ["All", "Development"],
+    gitUrl: "https://github.com/SChoumiloff/nextjs-portfolio",
+    previewUrl: "/",
+  },
+  {
+    id: 4,
     title: "Trading assistant",
     description: {
       EN: "Assistant who helps to detect trading patterns and backtests trading strategies (based on more than 100 technical indicators) on crypto currencies",
@@ -96,6 +132,11 @@ const ProjectsSection = () => {
           onClick={handleTagChange}
           name="Data"
           isSelected={tag === "data"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="Development"
+          isSelected={tag === "Development"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">
